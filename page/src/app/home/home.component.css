@@ -1,0 +1,29 @@
+div {
+    background-image: url(https://imgur.com/Paer3ZK.jpg);
+    height: 665px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-y: hidden;
+}
+#title {
+    font-weight: 500;
+    font-size: 80px;
+}
+#red {
+    color: rgb(255, 71, 38);
+}
+#image {
+    width: 600px;
+}
+@media (max-width: 1366px){
+    #image {
+        width: 530px;
+        margin-top: 5%;
+    }
+}
+.parrafo {
+    font-size: 20px;
+}
+.texto {
+    margin-top: 7%;
+}

@@ -1,0 +1,38 @@
+<div class="body">
+    <h1 class="text-center p-5" id="titulo">Crear tu nueva <span id="red"><u>Tarea</u></span></h1>
+    <div class="formulario text-center">
+        <form [formGroup]="nueva_Tarea">
+            <div class="form-row">
+                <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                    <div class="form-group">
+                        <label for="title">Título de la Tarea</label>
+                        <input formControlName="nombre" type="text" required class="form-control borderr" id="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción de la Tarea</label>
+                        <textarea formControlName="descripcion" style="resize: none;" required class="form-control borderr" id="descripcion" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha de creacion</label>
+                        <input formControlName="fecha_asignacion" type="date" required class="form-control borderr" id="fecha">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha de vencimiento</label>
+                        <input formControlName="fecha_limite" type="date" required class="form-control borderr" id="fecha">
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group has-validation">
+                            <div class="input-group-prepend">
+                                <label class="mt-1 pr-2" for="cc">N° de Identificación</label>
+                            </div>
+                            <input formControlName="fkusuario" type="number" class="form-control borderr" id="cc" placeholder="Documento de la persona que recibira la tarea" required><br>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <button (click)="TareaNueva()" id="boton" type="submit" class="btn btn-primary">Crear Tarea</button>
+        </form>
+    </div>
+    <br><br><br>
+</div>

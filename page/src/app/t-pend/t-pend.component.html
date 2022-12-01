@@ -1,0 +1,110 @@
+<div class="body">
+    <h1 class="text-center p-5" id="titulo">Lista de tus <span id="red"><u>Tareas</u></span> pendientes</h1>
+    <div id="consultar" class="row d-flex justify-content-center">
+        <h3 id="consult">Consulte sus tareas ingresando su documento</h3>
+        <div class="col-sm-12">
+            <form [formGroup]="consulttask">
+                <div class="d-flex justify-content-center">
+                    <input formControlName="fkusuario_id" id="document" type="fkusuario_id" placeholder="numero_documento">
+                    <button (click)="searchTask()" class="btn btn-primary" id="botoncito" type="submit"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="25" height="25"
+                        viewBox="10 0 172 172"
+                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M74.53333,17.2c-31.59642,0 -57.33333,25.73692 -57.33333,57.33333c0,31.59642 25.73692,57.33333 57.33333,57.33333c13.73998,0 26.35834,-4.87915 36.24766,-12.97839l34.23203,34.23203c1.43802,1.49778 3.5734,2.10113 5.5826,1.57735c2.0092,-0.52378 3.57826,-2.09284 4.10204,-4.10204c0.52378,-2.0092 -0.07957,-4.14458 -1.57735,-5.5826l-34.23203,-34.23203c8.09924,-9.88932 12.97839,-22.50768 12.97839,-36.24766c0,-31.59642 -25.73692,-57.33333 -57.33333,-57.33333zM74.53333,28.66667c25.39937,0 45.86667,20.4673 45.86667,45.86667c0,25.39937 -20.46729,45.86667 -45.86667,45.86667c-25.39937,0 -45.86667,-20.46729 -45.86667,-45.86667c0,-25.39937 20.4673,-45.86667 45.86667,-45.86667z"></path></g></g></svg></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="tarea" *ngFor="let works of taks; index as i">
+        <h3>{{works.nombre}}</h3>
+        <p>{{works.descripcion}}</p>
+        <p class="text-right">dia asignado: <span id="fecha">{{works.fecha_asignacion}}</span></p>
+        <p class="text-right">fecha limite: <span id="fecha">{{works.fecha_limite}}</span></p>
+        <p>id de tarea: <span id="id">{{works.id}}</span></p>
+        <button type="button" data-toggle="modal" data-target="#ModalEliminar" class="btn btn-danger bi bi-trash" id="trashbtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 13">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+              </svg>
+        </button>
+        <button type="button" data-toggle="modal" data-target="#ModalEditar" class="btn btn-success ml-2 bi bi-pencil-fill" id="editbtn"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 15">
+            <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+          </svg>
+        </button>
+    </div>
+
+    <div class="modal fade" id="ModalEliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Seguro que desea eliminar esta tarea?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="deltask">
+                  <label>Por favor verifique el ID de la tarea y posteriormente dele click en Eliminar Tarea.</label>
+                  <input formControlName="id" class="form-control" placeholder="id tarea" required>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button (click)="deleteWork()" type="button" class="btn btn-danger" data-dismiss="modal">Eliminar Tarea</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Editor de Tareas</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="edittask">
+                  <label>Id de la tarea a editar</label>
+                  <input formControlName="id" class="form-control" required placeholder="id tarea"><br>
+                  <label>Nuevo nombre de la tarea</label>
+                  <input formControlName="nombre" class="form-control" required placeholder="nombre"><br>
+                  <label>Nueva descripcion de la tarea</label>
+                  <textarea style="resize: none;" rows="4" formControlName="descripcion" class="form-control" required placeholder="descripcion"></textarea><br>
+                  <label>Nueva fecha de vencimiento</label>
+                  <input formControlName="fecha_limite" class="form-control" required type="date"><br>
+                  <label>Nuevo usuario a asignar esta tarea</label>
+                  <input formControlName="fkusuario_id" class="form-control" required placeholder="documento identificacion">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button (click)="editWork()" type="button" class="btn btn-success" data-dismiss="modal">Guardar Cambios</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- <div id="tarea">
+        <h3>Título de la Tarea</h3>
+        <p>Descripción de la tarea</p>
+        <p class="text-right">dia asignado: <span id="fecha">8/11/2021</span></p>
+        <p class="text-right">fecha limite: <span id="fecha">8/11/2021</span></p>
+    </div>
+    <div id="tarea">
+        <h3>Título de la Tarea</h3>
+        <p>Descripción de la tarea</p>
+        <p class="text-right">dia asignado: <span id="fecha">8/11/2021</span></p>
+        <p class="text-right">fecha limite: <span id="fecha">8/11/2021</span></p>
+    </div>
+    <div id="tarea">
+        <h3>Título de la Tarea</h3>
+        <p>Descripción de la tarea</p>
+        <p class="text-right">dia asignado: <span id="fecha">8/11/2021</span></p>
+        <p class="text-right">fecha limite: <span id="fecha">8/11/2021</span></p>
+    </div>
+    <div id="tarea">
+        <h3>Título de la Tarea</h3>
+        <p>Descripción de la tarea</p>
+        <p class="text-right">dia asignado: <span id="fecha">8/11/2021</span></p>
+        <p class="text-right">fecha limite: <span id="fecha">8/11/2021</span></p>
+    </div> -->
+</div>

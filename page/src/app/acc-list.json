@@ -1,0 +1,24 @@
+{
+    "posts": [
+        {
+            "documento_identificacion": 1055359100,
+            "nombre": "Kevin",
+            "apellido": "Lopez"
+        },
+        {
+            "documento_identificacion": 1034956943,
+            "nombre": "Simon",
+            "apellido": "Gaviria"
+        },
+        {
+            "documento_identificacion": 1293394528,
+            "nombre": "Juan",
+            "apellido": "Diego"
+        },
+        {
+            "documento_identificacion": 1293458293,
+            "nombre": "Gabriel",
+            "apellido": "Gomez"
+        }
+    ]
+}

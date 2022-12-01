@@ -1,0 +1,28 @@
+<div class="body">
+    <h1 class="text-center pt-5 pb-2" id="titulo">Configuración de <span id="green"><u>Usuarios</u></span></h1>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+            <div class="col-sm-8 p-5" id="config">
+                <h5>Por favor introduzca aquí el numero de identificacion de la cuenta que desea eliminar</h5>
+                <form [formGroup]="deleteUsr">
+                    <input formControlName="documento_identificacion" type="document" id="documento" required class="form-control col-sm-4" placeholder="num. documento">
+                </form>
+                <button (click)="deleteUser()" class="btn btn-primary" id="delete">Eliminar cuenta</button>
+            <br><br>
+            <h6 id="subtitle">¿Quiere cambiar el nombre o el apellido de la cuenta?</h6>
+                <small id="little" class="form-text text-muted">Por favor introduzca el documento de la cuenta y a continuacion escriba el nuevo nombre o apellido</small>
+            <div class="change row">
+                <div class="col-sm-4" id="nombre">
+                    <form [formGroup]="nNombreyApellido">
+                        <input formControlName="documento_identificacion" type="text" class="form-control" required id="document" placeholder="num. documento">
+                        <input formControlName="nombre" type="text" class="form-control" required id="new-name" placeholder="Nombre">
+                        <input formControlName="apellido" type="text" id="new-name" required class="form-control" placeholder="Apellido">
+                        <button (click)="changeNyA()" class="btn btn-primary" type="submit" id="btn-NoA">Cambiar Nombre y Apellido</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+</div>

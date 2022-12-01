@@ -1,0 +1,24 @@
+.body {
+    background-image: url(https://imgur.com/InVVmNm.jpg);
+    height: 665px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+#titulo {
+    font-size: 70px;
+    font-weight: 500;
+}
+#red {
+    color: rgb(44, 194, 79);
+}
+#subtitulo {
+    margin-top: -45px;
+    padding: 0 0 30px 0;
+}
+#list {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 20px 1%;
+    border-radius: 5px;
+    margin: 2vh;
+}

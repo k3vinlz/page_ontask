@@ -1,0 +1,77 @@
+.body {
+    background-image: url(https://imgur.com/InVVmNm.jpg);
+    height: 665px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+#titulo {
+    font-size: 70px;
+    font-weight: 500;
+}
+#green {
+    color: rgb(44, 194, 79);
+}
+#config {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 20px 5% 20px 5%;
+    border-radius: 5px;
+    margin-top: 2%;
+}
+#subtitle {
+    font-weight: 400;
+    font-size: 17px;
+}
+#little {
+    font-size: 16px;
+}
+#delete {
+    background: none;
+    position: absolute;
+    padding: 10px 10px;
+    color: #f32121;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    overflow: hidden;
+    transition: 0.2s;
+    border: 1px #ff0000 solid;
+    right: 5%;
+    top: 20%;
+}
+#delete:hover {
+    color: #fff1f1;
+    background: #f32121;
+    box-shadow: 0 0 10px #f32121, 0 0 30px #f32121, 0 0 60px #f32121;
+}
+#delete:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 30, 30, 0.2);
+}
+#new-name, #document {
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+#btn-NoA {
+    padding: 7px 20px;
+    border-radius: 20px;
+    background-color: rgb(44, 194, 79);
+    border: 1px #02a10f solid;
+    transition: all 200ms;
+}
+#btn-NoA:hover {
+    background-color: rgb(34, 153, 62);
+}
+#btn-NoA:focus {
+    box-shadow: 0 0 10px 0.5rem rgba(0, 255, 13, 0.301);
+}
+.change {
+    padding: 15px 0 0 0;
+}
+#documento {
+    padding: 7px 15px;
+    border-radius: 20px;
+    margin: 15px 0 30px 0;
+}
+input, button {
+    margin: 5px;
+}

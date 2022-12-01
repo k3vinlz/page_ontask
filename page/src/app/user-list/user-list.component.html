@@ -1,0 +1,24 @@
+<div class="body">
+    <h1 class="text-center p-5" id="titulo">Lista de <span id="red"><u>Usuarios</u></span></h1>
+    <h5 class="text-center" id="subtitulo">Ve a la <span id="red">Lista de Tareas</span>, para buscar tus tareas pendientes!</h5>
+    <!-- <div class="row m-1 content-align-center">
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+        <div class="col-sm-2 m-4 text-center" id="list"></div>
+    </div> -->
+    <div class="row justify-content-center">
+        <div class="col-md-2 text-center" id="list" *ngFor="let users of users; index as i">
+            <span><b>Nombre:</b> {{users.nombre}}</span><br>
+            <span><b>Apellido:</b> {{users.apellido}}</span><br>
+            <span><b>Documento:</b> {{users.documento_identificacion}}</span><br>
+        </div>
+    </div>
+</div>
